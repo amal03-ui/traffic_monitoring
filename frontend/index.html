@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Signal Monitoring System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="status-bar">
+            Server Status: <span id="connection-status" class="unknown">Unknown</span>
+        </div>
+        <div class="traffic-grid">
+            <div class="traffic-signal">
+                <h2>North</h2>
+                <div class="signal-light" id="north-light">
+                    <div class="light red" id="north-red"></div>
+                    <div class="light yellow" id="north-yellow"></div>
+                    <div class="light green" id="north-green"></div>
+                </div>
+                <div class="timer" id="north-timer"><span id="timer">0</span> seconds</div>
+                <div class="status" id="north-status"></div>
+                <div class="vehicles-count">Vehicles: <span id="northCount">0</span></div>
+                <div class="status-indicator pulsate" id="north-visited"></div>
+            </div>
+            <div class="traffic-signal">
+                <h2>South</h2>
+                <div class="signal-light" id="south-light">
+                    <div class="light red" id="south-red"></div>
+                    <div class="light yellow" id="south-yellow"></div>
+                    <div class="light green" id="south-green"></div>
+                </div>
+                <div class="timer" id="south-timer"><span id="timer">0</span> seconds</div>
+                <div class="status" id="south-status"></div>
+                <div class="vehicles-count">Vehicles: <span id="southCount">0</span></div>
+                <div class="status-indicator pulsate" id="south-visited"></div>
+            </div>
+            <div class="traffic-signal">
+                <h2>West</h2>
+                <div class="signal-light" id="west-light">
+                    <div class="light red" id="west-red"></div>
+                    <div class="light yellow" id="west-yellow"></div>
+                    <div class="light green" id="west-green"></div>
+                </div>
+                <div class="timer" id="west-timer"><span id="timer">0</span> seconds</div>
+                <div class="status" id="west-status"></div>
+                <div class="vehicles-count">Vehicles: <span id="westCount">0</span></div>
+                <div class="status-indicator pulsate" id="west-visited"></div>
+            </div>
+            <div class="traffic-signal">
+                <h2>East</h2>
+                <div class="signal-light" id="east-light">
+                    <div class="light red" id="east-red"></div>
+                    <div class="light yellow" id="east-yellow"></div>
+                    <div class="light green" id="east-green"></div>
+                </div>
+                <div class="timer" id="east-timer"><span id="timer">0</span> seconds</div>
+                <div class="status" id="east-status"></div>
+                <div class="vehicles-count">Vehicles: <span id="eastCount">0</span></div>
+                <div class="status-indicator pulsate" id="east-visited"></div>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h2>Traffic Camera Feed</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="northFile">North Image:</label>
+                    <input type="file" id="northFile" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="southFile">South Image:</label>
+                    <input type="file" id="southFile" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="westFile">West Image:</label>
+                    <input type="file" id="westFile" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="eastFile">East Image:</label>
+                    <input type="file" id="eastFile" accept="image/*">
+                </div>
+            </div>
+            <button class="process-btn" id="process-images">Process Images & Update Signals</button>
+            <div class="loading" id="loading">Processing...</div>
+            <div class="error-message" id="error-message"></div>
+            <div class="auto-update">
+                <input type="checkbox" id="auto-update">
+                <label for="auto-update">Enable Auto-Update</label>
+                <label for="update-interval">Update Interval (seconds):</label>
+                <input type="number" id="update-interval" value="1" min="1">
+            </div>
+        </div>
+        <footer>
+            &copy; 2025 Smart Traffic Control System | All Rights Reserved
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
